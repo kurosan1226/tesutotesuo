@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたの名前 | 個人ウェブページ</title>
+    <style>
+        /* リセットCSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ベーススタイル */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        header {
+            background-color: #35424a;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        nav {
+            background-color: #35424a;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #e8491d;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
+            object-fit: cover;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #35424a;
+            color: #fff;
+            border: none;
+        }
+
+        footer {
+            background-color: #35424a;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .portfolio-grid {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .portfolio-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>あなたの名前</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">自己紹介</a>
+        <a href="#portfolio">ポートフォリオ</a>
+        <a href="#contact">連絡先</a>
+    </nav>
+
+    <section id="about" class="container">
+        <h2>自己紹介</h2>
+        <img src="your-profile-image.jpg" alt="プロフィール画像" class="profile-img">
+        <p>
+            ここに自己紹介文を入力してください。経歴や興味、スキルなどを含めると良いでしょう。
+        </p>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>ポートフォリオ</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>プロジェクト1</h3>
+                <p>プロジェクトの簡単な説明。</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>プロジェクト2</h3>
+                <p>プロジェクトの簡単な説明。</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>プロジェクト3</h3>
+                <p>プロジェクトの簡単な説明。</p>
+            </div>
+            <!-- 必要に応じてポートフォリオ項目を追加 -->
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>連絡先</h2>
+        <div class="contact-form">
+            <form>
+                <label for="name">名前:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 あなたの名前</p>
+        <p>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script>
+        // フォームの送信処理（デモ用）
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('メッセージが送信されました。');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
